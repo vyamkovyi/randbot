@@ -3,7 +3,7 @@
 #include <sstream>
 #include <random>
 
-auto main() -> int {
+auto main() {
 	std::string const token("657444967:AAG_mQRgQxv_fhRJEbMiAHHpOqqSpvuyu4U");
 	std::cout << "randbot | Copyright (C) Hexawolf 2019" << std::endl;
 	telegram::sender sender(token);
@@ -11,9 +11,7 @@ auto main() -> int {
 	std::random_device urandom("/dev/urandom");
 	std::uniform_int_distribution<> distr(1, 20);
 	listener.set_callback_message([&](telegram::types::message const &message){
-		std::stringstream ss;
-		ss << distr(urandom);
-		sender.send_message(message.chat.id, ss.str()); 
+		sender.send_message(message.chat.id, std::to_string(distr(urandom))); 
 	});
 	listener.run();
 	return EXIT_SUCCESS;
