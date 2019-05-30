@@ -3,8 +3,8 @@
 #include <sstream>
 #include <random>
 
-auto main() {
-	std::string const token("657444967:AAG_mQRgQxv_fhRJEbMiAHHpOqqSpvuyu4U");
+auto main() -> int {
+	std::string const token(".");
 	std::cout << "randbot | Copyright (C) Hexawolf 2019" << std::endl;
 	telegram::sender sender(token);
 	telegram::listener::poll listener(sender);
