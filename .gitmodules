@@ -1,0 +1,3 @@
+[submodule "lib/libtelegram"]
+	path = lib/libtelegram
+	url = https://github.com/slowriot/libtelegram.git
